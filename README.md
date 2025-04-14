@@ -28,7 +28,7 @@ This automation assumes you are provisioning your EC2 instance using an **Instan
        - Allow **SSH (22)** for remote access
        - Allow any ports needed by your app (e.g., 5000, 80, 443)
      - Storage: Minimum 8 GB
-     - User data: *(bash script file )*
+     - User data: *(bash script file: user-data.sh )*
 
 2. **Launch EC2 Instance from Template**
    - Go to **Launch Instances** > **Launch from template**
@@ -61,19 +61,4 @@ This automation assumes you are provisioning your EC2 instance using an **Instan
     📡 Running app as a systemd service
 
 
-    ###🚀 How to Use
-
-   1. 🔐 Prepare Your SSH Key
-      Save your private SSH key at this location on your server:
-        /home/ubuntu/.ssh/id_ed25519
-      Set correct permissions:
-        sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/id_ed25519
-        sudo chmod 600 /home/ubuntu/.ssh/id_ed25519
-  2. 🔄 Update Your GitHub Repo URL
-        Inside setup.sh, replace the following line with your actual private repo:
-          git clone git@github.com:your-username/your-repo-name.git srv-02
-  3. ▶️ Run the Script
-      Execute the script as root:
-         sudo bash setup.sh
-  4. ✅ Verify the Service
-       systemctl status srv-02
+   
